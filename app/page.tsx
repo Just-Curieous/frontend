@@ -1,103 +1,211 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import React, { useState, useEffect } from 'react';
+import { Menu, X, Play, ChevronRight, ScrollText, Microscope, ChartColumn, Rocket, Settings2 } from 'lucide-react';
+import Image from 'next/image';
+
+export default function LandingPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-orange-500 via-stone-500 to-orange-500">
+      {/* Navigation */}
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${
+        scrollY > 50 ? 'bg-stone-500/60 backdrop-blur-lg' : 'bg-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center">
+              <div className="w-8 h-8 bg-stone-50 rounded-lg flex items-center justify-center">
+                <Image 
+                  src="/favicon.ico"
+                  width={25}
+                  height={25}
+                  className="rounded-lg flex items-center justify-center"
+                  alt="Curie logo"
+                />
+              </div>
+              <span className="ml-3 text-xl font-bold text-white">Curie</span>
+            </div>
+            
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
+              <a href="#demo" className="text-gray-300 hover:text-white transition-colors">Demo</a>
+              <a href="https://www.just-curieous.com/" className="text-gray-300 hover:text-white transition-colors">Blog</a>
+              <a href="https://github.com/Just-Curieous/Curie" className="text-gray-300 hover:text-white transition-colors">Github</a>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={toggleMenu}
+              className="md:hidden text-white p-2"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-black/95 backdrop-blur-lg">
+            <div className="px-4 py-4 space-y-4">
+              <a href="#features" className="block text-gray-300 hover:text-white py-2">Features</a>
+              <a href="#demo" className="block text-gray-300 hover:text-white py-2">Demo</a>
+              <a href="https://www.just-curieous.com/" className="block text-gray-300 hover:text-white py-2">Blog</a>
+              <a href="https://github.com/Just-Curieous/Curie" className="block text-gray-300 hover:text-white py-2">Github</a>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              Move Scientific Research at the Speed of
+              <span className="bg-gradient-to-r from-orange-300 to-orange-500 bg-clip-text text-transparent"> Thought</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-5xl mx-auto">
+              Curie helps answer your curiosity through end-to-end experimentation automation, ensuring that every step—from hypothesis formulation to result interpretation—is conducted with precision, reliability, and reproducibility.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="https://github.com/Just-Curieous/Curie">
+              <button className="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105 flex items-center group">
+                Github
+                <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
+              </a>
+              <a href="https://www.just-curieous.com/">
+              <button className="border-2 border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all duration-300">
+                Blog
+              </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+            Features
+          </h2>
+          <div className="grid md:grid-cols-5 gap-6">
+            {[
+              {
+                icon: <Rocket className="w-8 h-8" />,
+                title: "Automated Experimentation",
+                description: "From hypothesis formulation and experimental execution to analysis of results."
+              },
+              {
+                icon: <ChartColumn className="w-8 h-8" />,
+                title: "Rigor Enhancement",
+                description: "Built-in verification modules enforce methodical procedure, agent reliability and reproducibility."
+              },
+              {
+                icon: <Microscope className="w-8 h-8" />,
+                title: "Broad Applicability",
+                description: "Supports ML Engineering, system analysis, and general scientific discovery."
+              },
+              {
+                icon: <Settings2 className="w-8 h-8" />,
+                title: "Highly Customizable",
+                description: "Supports integration with custom starter code and arbitrary datasets."
+              },
+              {
+                icon: <ScrollText className="w-8 h-8" />,
+                title: "Automatic, Insightful Reporting",
+                description: "Experimental processes and outcomes are clearly documented with insightful figures."
+              }
+            ].map((feature, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
+                <div className="text-orange-400 mb-4">{feature.icon}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                <p className="text-gray-200 leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Video Section */}
+      <section id="demo" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            See It In Action
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            Watch how Curie automates complex experimental workflows and generates a report in just minutes.
+          </p>
+          
+          <div className="relative max-w-4xl mx-auto">
+            <div className="relative bg-gradient-to-r from-orange-900/50 to-red-900/50 rounded-3xl p-2">
+              <div className="bg-black rounded-2xl overflow-hidden">
+                <div className="relative aspect-video">
+                  <iframe
+                    src={"https://www.youtube.com/embed/Qn_T5mm2OP4"}
+                    title="Product Demo Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full rounded-2xl"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center mb-6 md:mb-0">
+              <div className="w-8 h-8 bg-stone-50 rounded-lg flex items-center justify-center">
+                <Image 
+                  src="/favicon.ico"
+                  width={25}
+                  height={25}
+                  className="rounded-lg flex items-center justify-center"
+                  alt="Curie logo"
+                />
+              </div>
+              <span className="ml-3 text-xl font-bold text-white">Curie</span>
+            </div>
+            <div className="flex space-x-8 text-gray-400">
+              <a href="#" className="hover:text-white transition-colors">Privacy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms</a>
+              <a href="#" className="hover:text-white transition-colors">Support</a>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-400">
+            <p>&copy; 2025 Just Curieous. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fade-in 1s ease-out;
+        }
+      `}</style>
     </div>
   );
 }
