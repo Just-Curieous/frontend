@@ -1,12 +1,11 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Play, ChevronRight, ScrollText, Microscope, ChartColumn, Rocket, Settings2 } from 'lucide-react';
+import { Menu, X, ChevronRight, ScrollText, Microscope, ChartColumn, Rocket, Settings2 } from 'lucide-react';
 import Image from 'next/image';
 
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
