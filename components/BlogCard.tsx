@@ -16,7 +16,7 @@ export default function BlogCard({ post }: BlogCardProps) {
   };
 
   return (
-    <article className="bg-stone-500 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <article className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
       {post.featuredImage && (
         <div className="relative h-48 w-full">
           <Image
@@ -28,7 +28,7 @@ export default function BlogCard({ post }: BlogCardProps) {
         </div>
       )}
       
-      <div className="p-6">
+      <div className="p-5">
         <div className="flex items-center gap-2 text-sm text-white mb-2">
           <time dateTime={post.publishedAt}>
             {formatDate(post.publishedAt)}
@@ -44,8 +44,6 @@ export default function BlogCard({ post }: BlogCardProps) {
         
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-sm text-gray-500">by</span>
-            <span className="text-sm font-medium text-white">{post.author}</span>
           </div>
           
           {post.tags.length > 0 && (

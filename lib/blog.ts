@@ -61,7 +61,7 @@ function parsePost(fileContents: string, slug: string): BlogPost {
     excerpt: data.excerpt || content.substring(0, 160) + '...',
     content,
     author: data.author || 'Anonymous',
-    publishedAt: data.publishedAt || new Date().toISOString(),
+    publishedAt: data.date || new Date().toISOString(),
     updatedAt: data.updatedAt,
     tags: data.tags || [],
     slug,

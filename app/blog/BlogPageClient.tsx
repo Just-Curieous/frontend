@@ -25,18 +25,12 @@ export default function BlogPageClient({ posts }: BlogPageClientProps) {
   });
 
   return (
-    <div className="min-h-screen bg-stone-600">
-      {/* Hero Section */}
-      <section className="bg-stone-600 border-w">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl">
-              Blog Posts
-            </h1>
-          </div>
-        </div>
-      </section>
-
+    <div>
+      <div className='text-center'>
+        <h1 className="text-4xl font-bold text-white sm:text-5xl">
+            Blog
+        </h1>
+      </div>
       {/* Filters */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
@@ -81,7 +75,7 @@ export default function BlogPageClient({ posts }: BlogPageClientProps) {
       </section>
 
       {/* Posts Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {filteredPosts.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">No posts found matching your criteria.</p>

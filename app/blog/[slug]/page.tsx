@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { marked } from 'marked';
 import { getAllPostSlugs, getPostBySlug } from '../../../lib/blog';
 
 interface BlogPostPageProps {
@@ -11,34 +11,15 @@ interface BlogPostPageProps {
   };
 }
 
-// Custom components for MDX
-const components = {
-  h1: (props: any) => <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />,
-  h2: (props: any) => <h2 className="text-2xl font-bold mt-6 mb-3" {...props} />,
-  h3: (props: any) => <h3 className="text-xl font-bold mt-4 mb-2" {...props} />,
-  p: (props: any) => <p className="mb-4 leading-relaxed" {...props} />,
-  ul: (props: any) => <ul className="list-disc list-inside mb-4 space-y-1" {...props} />,
-  ol: (props: any) => <ol className="list-decimal list-inside mb-4 space-y-1" {...props} />,
-  blockquote: (props: any) => (
-    <blockquote className="border-l-4 border-blue-500 pl-4 italic my-4 text-gray-700" {...props} />
-  ),
-  code: (props: any) => (
-    <code className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono" {...props} />
-  ),
-  pre: (props: any) => (
-    <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4" {...props} />
-  ),
-};
-
 export async function generateStaticParams() {
-  const slugs = await getAllPostSlugs();
+  const slugs = getAllPostSlugs();
   return slugs.map((slug) => ({
     slug,
   }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+  const post = getPostBySlug(params.slug);
   
   if (!post) {
     return {
@@ -58,7 +39,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getPostBySlug(params.slug);
+  const post = getPostBySlug(params.slug);
 
   if (!post) {
     notFound();
@@ -72,35 +53,32 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     });
   };
 
+
+  // Parse markdown content to HTML
+  const htmlContent = marked(post.content);
+
   return (
-    <article className="min-h-screen bg-white">
+    <article className="min-h-screen bg-stone-600">
       {/* Header */}
-      <header className="bg-gray-50 border-b">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <header className="bg-stone-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
           <div className="mb-4">
             <Link 
-              href="/blog" 
-              className="text-blue-600 hover:text-blue-800 font-medium"
+              href="/" 
+              className="text-orange-400 font-medium"
             >
-              ← Back to Blog
+              Home
             </Link>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
             {post.title}
           </h1>
           
-          <div className="flex items-center gap-4 text-gray-600 mb-6">
-            <div className="flex items-center gap-2">
-              <span>by</span>
-              <span className="font-medium text-gray-900">{post.author}</span>
-            </div>
-            <span>•</span>
+          <div className="flex items-center gap-4 text-white mb-6">
             <time dateTime={post.publishedAt}>
               {formatDate(post.publishedAt)}
             </time>
-            <span>•</span>
-            <span>{post.readingTime} min read</span>
           </div>
           
           {post.tags.length > 0 && (
@@ -108,7 +86,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full"
+                  className="px-3 py-1 bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm rounded-full"
                 >
                   {tag}
                 </span>
@@ -118,39 +96,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </header>
 
-      {/* Featured Image */}
-      {post.featuredImage && (
-        <div className="relative h-64 sm:h-96 w-full">
-          <Image
-            src={post.featuredImage}
-            alt={post.title}
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-      )}
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="prose prose-lg max-w-none">
-          <MDXRemote source={post.content} components={components} />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="prose prose-lg prose-gray max-w-none">
+          <div 
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+            className="prose-headings:font-bold prose-h1:text-3xl prose-h1:mt-8 prose-h1:mb-4 prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-3 prose-h3:text-xl prose-h3:mt-4 prose-h3:mb-2 prose-p:mb-4 prose-p:leading-relaxed prose-ul:list-disc prose-ul:list-inside prose-ul:mb-4 prose-ul:space-y-1 prose-ol:list-decimal prose-ol:list-inside prose-ol:mb-4 prose-ol:space-y-1 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:my-4 prose-blockquote:text-gray-700 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:mb-4"
+          />
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="border-t bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center">
-            <Link 
-              href="/blog" 
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Read More Posts
-            </Link>
-          </div>
-        </div>
-      </footer>
     </article>
   );
 }
