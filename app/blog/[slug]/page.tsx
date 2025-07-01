@@ -98,12 +98,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="prose prose-lg prose-gray max-w-none">
-          <div 
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-            className="prose-headings:font-bold prose-h1:text-3xl prose-h1:mt-8 prose-h1:mb-4 prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-3 prose-h3:text-xl prose-h3:mt-4 prose-h3:mb-2 prose-p:mb-4 prose-p:leading-relaxed prose-ul:list-disc prose-ul:list-inside prose-ul:mb-4 prose-ul:space-y-1 prose-ol:list-decimal prose-ol:list-inside prose-ol:mb-4 prose-ol:space-y-1 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:my-4 prose-blockquote:text-gray-700 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:mb-4"
-          />
-        </div>
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} 
+          className="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl"
+        />
       </div>
 
     </article>

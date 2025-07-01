@@ -9,7 +9,7 @@ tags: [machine-learning, research]
 <div style="text-align: center">
 
 
-<p style="font-size: 0.8em; color: grey;">
+<p style="font-size: 0.8em; color: white; margin-bottom: 2em;">
   <a href="https://www.cs-pk.com/">Patrick Tser Jern Kon</a><sup>*</sup>, 
   <a href="https://websites.umich.edu/~amberljc/">Jiachen Liu</a><sup>*</sup> (Equal Contribution<sup>*</sup>)<br>
   Xinyi Zhu,
@@ -41,7 +41,7 @@ AI for Science is rapidly advancing, with promising early work on scientific aut
 A particularly exciting frontier is **the automation of AI research experimentation**—the process of designing, executing, and analyzing experiments to advance AI itself. Unlike fields requiring physical experimentation, AI research is largely digital—well-suited for LLM-based automation. 
 
 
-  <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 2em 0;">
+  <div style="padding: 20px; border-radius: 8px; margin: 2em 0;">
     <p style="margin-bottom: 1em;">Ideally, we want to provide an AI agent with a research goal—such as reproducing a result, validating a new hypothesis, or testing an ablation— along with the specific context and have the agent:</p>
     <ul style="list-style-type: none; padding-left: 0;">
       <li style="margin-bottom: 0.5em;">• Formulate hypotheses, design experiments,</li>
@@ -51,8 +51,8 @@ A particularly exciting frontier is **the automation of AI research experimentat
     </ul>
   </div>
 
-<div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 0 15px;">
-    <img src="/assets/images/exp-bench-overview.png" alt="EXP-Bench Overview" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+<div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 15px;">
+    <img src="/images/exp-bench-overview.png" alt="EXP-Bench Overview" style="width: 100%; height: auto; display: block; margin: 0 auto;">
     <p style="font-size: 0.8em; margin-top: 10px; color: grey;">
         Figure 1. EXP-Bench evaluates AI agents on research experiment tasks extracted semi-autonomously from peer-reviewed AI papers.
     </p>
@@ -73,18 +73,18 @@ Using this approach, we distilled *461 experiments from NeurIPS and ICLR papers*
 
  
 
-<div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 0 15px;">
-    <img src="/assets/images/exp-construction.png" alt="EXP-Bench Construction" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+<div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 15px;">
+    <img src="/images/exp-construction.png" alt="EXP-Bench Construction" style="width: 100%; height: auto; display: block; margin: 0 auto;">
     <p style="font-size: 0.8em; margin-top: 10px; color: grey;">
         Figure 2. Our semi-automated pipeline for constructing EXP-Bench from published papers.
     </p>
-    <p style="font-size: 0.8em; margin-top: -15px; color: grey;"> 
+    <p style="font-size: 0.8em; margin-top: 15px; color: grey;"> 
             See Figure 3 for an example AI research task extracted through this pipeline.
     </p>
 
 </div>
 <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 0 15px;"> 
-    <img src="/assets/images/exp-bench-example.png" alt="EXP-Bench Example" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="/images/exp-bench-example.png" alt="EXP-Bench Example" style="width: 100%; height: auto; display: block; margin: 0 auto;">
     <p style="font-size: 0.8em; margin-top: 10px; color: grey;">
         Figure 3. One AI research task example from ICLR 2024 MogaNet [1].
     </p>

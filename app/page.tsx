@@ -1,5 +1,5 @@
 
-import { ScrollText, Microscope, ChartColumn, Rocket, Settings2, Telescope, BrainCircuit, Brain } from 'lucide-react';
+import { ScrollText, Microscope, ChartColumn, Rocket, Settings2, Telescope, BrainCircuit } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -128,7 +128,7 @@ export default function LandingPage() {
       </section>
       */}
 
-      
+
       {/* Footer */}
       <Footer />
     </div>
