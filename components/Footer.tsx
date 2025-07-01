@@ -22,10 +22,11 @@ export default function Footer() {
                     </div>
                     </Link>
                     <div className="flex space-x-8 text-white">
-                      <a href="/contact" className="hover:text-white transition-colors">Contact Us</a>
+                      <Link href="/research" className="hover:text-white transition-colors">Research</Link>
+                      <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>
                     </div>
                   </div>
-                  <div className="mt-8 text-center text-white">
+                  <div className="mt-8 text-center text-white pb-4">
                     <p>&copy; 2025 Curie Research Platform. All rights reserved.</p>
                     <p>829 University Ave, Palo Alto, CA 94301</p>
                   </div>

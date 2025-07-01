@@ -40,8 +40,9 @@ export default function Navigation() {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
+            <Link href="/research" className="text-gray-300 hover:text-white transition-colors">Research</Link>
             <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
-            <a href="https://github.com/Just-Curieous/Curie" className="text-gray-300 hover:text-white transition-colors">Github</a>
+            <a href="https://github.com/Just-Curieous" className="text-gray-300 hover:text-white transition-colors">Github</a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -59,7 +60,7 @@ export default function Navigation() {
         <div className="md:hidden bg-black/95 backdrop-blur-lg">
           <div className="px-4 py-4 space-y-4">
             <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
-            <a href="https://github.com/Just-Curieous/Curie" className="block text-gray-300 hover:text-white py-2">Github</a>
+            <a href="https://github.com/Just-Curieous" className="block text-gray-300 hover:text-white py-2">Github</a>
           </div>
         </div>
       )}

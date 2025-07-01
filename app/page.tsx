@@ -1,5 +1,5 @@
 
-import { ScrollText, Microscope, ChartColumn, Rocket, Settings2 } from 'lucide-react';
+import { ScrollText, Microscope, ChartColumn, Rocket, Settings2, Telescope, BrainCircuit, Brain } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -16,6 +16,40 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Projects Section */}
+      <section id="projects">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+            Projects
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                icon: <BrainCircuit className="w-8 h-8" />,
+                title: "Curie: A Research Experimentation Agent",
+                description: "The first AI-agent framework designed for automated and rigorous scientific experimentation.",
+                link: "https://github.com/Just-Curieous/Curie"
+              },
+              {
+                icon: <Telescope className="w-8 h-8" />,
+                title: "Are you Scooped?",
+                description: "Analyze your research ideas to see if similar work already exists.",
+                link: "https://demo.just-curieous.com/login.html"
+              }
+            ].map((feature, index) => (
+              
+              <div key={index} className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
+                <a href={feature.link}>
+                <div className="text-orange-400 mb-4">{feature.icon}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                <p className="text-gray-200 leading-relaxed">{feature.description}</p>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section id="features" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -60,13 +94,16 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+      
+      
 
       {/* Blog Section */}
       <section id="blog" className="py-20 px-4 sm:px-6 lg:px-8">
         <BlogPageClient posts={posts} />     
       </section>
+      {/* Demo Video Section
+      
 
-      {/* Demo Video Section */}
       <section id="demo" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
@@ -89,7 +126,9 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+      */}
 
+      
       {/* Footer */}
       <Footer />
     </div>

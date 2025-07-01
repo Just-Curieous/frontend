@@ -13,10 +13,10 @@ export default function HeroSection() {
             <span className="bg-gradient-to-r from-orange-300 to-orange-500 bg-clip-text text-transparent"> Automated</span>
           </h1>
           <p className="text-xl md:text-xl text-gray-300 mb-8 max-w-5xl mx-auto">
-            Curie helps answer your curiosity through end-to-end experimental automation, ensuring that every step—from hypothesis formulation to result interpretation—is conducted with precision, reliability, and reproducibility.
+            Curie Research Platform helps answer your curiosity through end-to-end experimental automation, ensuring that every step—from hypothesis formulation to result interpretation—is conducted with precision, reliability, and reproducibility.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="https://github.com/Just-Curieous/Curie">
+            <a href="https://github.com/Just-Curieous">
               <button className="bg-gradient-to-r from-orange-400 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105 flex items-center group">
                 Github
                 <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />

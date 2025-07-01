@@ -16,6 +16,7 @@ type SubmissionStatus = '' | 'success' | 'error';
 
 interface ApiResponse {
   message: string;
+  ok: boolean;
 }
 
 export default function Contact() {
@@ -51,7 +52,7 @@ export default function Contact() {
 
       const result: ApiResponse = await response.json();
 
-      if (response.ok) {
+      if (result.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
@@ -82,7 +83,7 @@ export default function Contact() {
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-white mb-4">Contact Us</h1>
               <p className="text-white">
-                We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
               </p>
             </div>
 
@@ -177,7 +178,7 @@ export default function Contact() {
                     </div>
                     <div className="ml-3">
                       <p className="text-sm font-medium text-green-800">
-                        Message sent successfully! We'll get back to you soon.
+                        Message sent successfully! We&apos;ll get back to you soon.
                       </p>
                     </div>
                   </div>
