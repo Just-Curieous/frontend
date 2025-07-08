@@ -97,10 +97,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div dangerouslySetInnerHTML={{ __html: htmlContent }} 
-          className="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl"
-        />
+      <div className="prose prose-lg max-w-4xl mx-auto markdown-content">
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </div>
 
     </article>

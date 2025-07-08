@@ -25,5 +25,39 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.prose h1 { font-size: 2rem !important; font-weight: bold !important; }
-.prose h2 { font-size: 1.5rem !important; font-weight: bold !important; padding: 5px }
+.markdown-content h1 {
+  @apply text-3xl font-bold mt-8 mb-4;
+}
+.markdown-content h2 {
+  @apply text-2xl text-white font-bold mt-6 mb-3;
+}
+.markdown-content h3 {
+  @apply text-xl font-bold mt-4 mb-2;
+}
+.markdown-content p {
+  @apply py-2 mb-4 leading-relaxed;
+}
+
+pre {
+    background-color: #2f3031;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+code {
+    background-color: #303336;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 85%;
+}
+
+/* Ensure code blocks don't inherit paragraph styling */
+pre code {
+    background-color: transparent;
+    padding: 0;
+}

@@ -27,8 +27,6 @@ tags: [machine-learning, research]
 </div>
 
 <div style="text-align: center; margin-bottom: 2em;">
-
-
   <div style="margin-bottom: 2em;">
     <a href="https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench" style="margin: 0 10px; padding: 8px 15px; background-color: #f8f9fa; border-radius: 5px; text-decoration: none; color: #2c3e50;">📊 Dataset</a>
     <a href="https://arxiv.org/abs/2505.24785" style="margin: 0 10px; padding: 8px 15px; background-color: #f8f9fa; border-radius: 5px; text-decoration: none; color: #2c3e50;">📄 Paper</a>
@@ -53,7 +51,7 @@ A particularly exciting frontier is **the automation of AI research experimentat
 
 <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 15px;">
     <img src="/images/exp-bench-overview.png" alt="EXP-Bench Overview" style="width: 100%; height: auto; display: block; margin: 0 auto;">
-    <p style="font-size: 0.8em; margin-top: 10px; color: grey;">
+    <p style="font-size: 0.8em; margin-top: 10px; color: white;">
         Figure 1. EXP-Bench evaluates AI agents on research experiment tasks extracted semi-autonomously from peer-reviewed AI papers.
     </p>
 </div>
@@ -75,17 +73,17 @@ Using this approach, we distilled *461 experiments from NeurIPS and ICLR papers*
 
 <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 15px;">
     <img src="/images/exp-construction.png" alt="EXP-Bench Construction" style="width: 100%; height: auto; display: block; margin: 0 auto;">
-    <p style="font-size: 0.8em; margin-top: 10px; color: grey;">
+    <p style="font-size: 0.8em; margin-top: 10px; color: white;">
         Figure 2. Our semi-automated pipeline for constructing EXP-Bench from published papers.
     </p>
-    <p style="font-size: 0.8em; margin-top: 15px; color: grey;"> 
+    <p style="font-size: 0.8em; margin-top: 15px; color: white;"> 
             See Figure 3 for an example AI research task extracted through this pipeline.
     </p>
 
 </div>
 <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 0 15px;"> 
     <img src="/images/exp-bench-example.png" alt="EXP-Bench Example" style="width: 100%; height: auto; display: block; margin: 0 auto;">
-    <p style="font-size: 0.8em; margin-top: 10px; color: grey;">
+    <p style="font-size: 0.8em; margin-top: 10px; color: white;">
         Figure 3. One AI research task example from ICLR 2024 MogaNet [1].
     </p>
 </div>
@@ -93,7 +91,7 @@ Using this approach, we distilled *461 experiments from NeurIPS and ICLR papers*
 ## What EXP-Bench Reveals About Today's AI Agents
 
 We tested leading agents, including *OpenHands w/ Claude Sonnet 3.7*, and found that while they can earn partial credit for individual steps like experiment design or coding (~20-35% success), their ability to *complete a full, executable experiment* is nearly non-existent—a mere 0.5% success rate. 
-  <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 2em 0;">
+  <div style="padding: 20px; border-radius: 8px; margin: 2em 0;">
     <p style="margin-bottom: 1em;">Our analysis pinpointed several critical weaknesses:</p>
     <ol style="padding-left: 20px;">
       <li style="margin-bottom: 0.5em;"><em>Limited Long-Horizon Planning and Reasoning</em></li>
@@ -115,8 +113,8 @@ That said, much work remains. While EXP-Bench currently focuses on machine learn
 ## Explore Our Work
 
   <div style="display: flex; justify-content: center; gap: 20px; margin: 2em 0;">
-    <a href="https://arxiv.org/abs/2505.24785" style="padding: 10px 20px; background-color: #2c3e50; color: white; text-decoration: none; border-radius: 5px;">📑 Full paper</a>
-    <a href="https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench" style="padding: 10px 20px; background-color: #2c3e50; color: white; text-decoration: none; border-radius: 5px;">🗃️ Open-sourced dataset</a>
+    <a href="https://arxiv.org/abs/2505.24785" style="padding: 10px 20px; background-color: #f8f9fa; color: #2c3e50; text-decoration: none; border-radius: 5px;">📑 Full paper</a>
+    <a href="https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench" style="padding: 10px 20px; background-color: #f8f9fa; color: #2c3e50; text-decoration: none; border-radius: 5px;">🗃️ Open-sourced dataset</a>
   </div>
 
 ```bib

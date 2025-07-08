@@ -6,17 +6,19 @@ tags: [machine-learning, research]
 ---
 
 
-
-<div style="text-align: center; color: gray;">
-<h2 style="font-size: 1.15em; color: grey;">The AI Co-Scientist Making ML More Accessible for Your Research</h2>
+<div style="text-align: center;">
+<h2 style="font-size: 1.15em;">The AI Co-Scientist Making ML More Accessible for Your Research</h2>
 </div>
 
 
-<div style="text-align: center">
-<a href="https://github.com/Just-Curieous/Curie">💻 Github Link</a> | <a href="https://github.com/Just-Curieous/Curie/tree/main/benchmark/mle_bench"> 📒 Use Cases</a> | 
-<a href="https://arxiv.org/abs/2502.16069">📄 Paper Link</a>
-
+<div style="text-align: center; margin-bottom: 2em;">
+  <div style="margin-bottom: 2em;">
+    <a href="https://github.com/Just-Curieous/Curie" style="margin: 0 10px; padding: 8px 15px; background-color: #f8f9fa; border-radius: 5px; text-decoration: none; color: #2c3e50;">💻 Github Link</a>
+    <a href="https://github.com/Just-Curieous/Curie/tree/main/benchmark/mle_bench" style="margin: 0 10px; padding: 8px 15px; background-color: #f8f9fa; border-radius: 5px; text-decoration: none; color: #2c3e50;">📒 Use Cases</a>
+    <a href="https://arxiv.org/abs/2502.16069" style="margin: 0 10px; padding: 8px 15px; background-color: #f8f9fa; border-radius: 5px; text-decoration: none; color: #2c3e50;">📄 Paper Link</a>
+  </div>
 </div>
+
 
 In our previous [post](https://www.just-curieous.com/), we introduced [Curie](https://github.com/Just-Curieous/Curie): an open-sourced AI co-scientist that automates experimentation and accelerate the journey from idea to validation. Today, we're thrilled to introduce Curie's AutoML feature, designed to help researchers **rapidly test hypotheses** and unlock insights from their **valuable data**.
 
@@ -33,8 +35,8 @@ From data preprocessing, to model and hyperparameter selection, to training and 
 <div class="figure-container" style="text-align: center; margin: 20px 0;">
     <img src="/exp-bench-mle-curie.drawio.png" 
          alt="Curie AutoML Overview" 
-         style="width: 80%; height: auto; max-width: 100%;">
-    <div style="margin-top: 10px; font-style: italic; color: #666; font-size: 14px;">
+         style="width: 80%; height: auto; max-width: 100%; display: block; margin: 0 auto;">
+    <div style="margin-top: 10px; font-style: italic; font-size: 14px;">
         Curie AutoML Overview
     </div>
 </div>
