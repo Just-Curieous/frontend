@@ -1,39 +1,41 @@
-import { Metadata } from 'next';
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { marked } from 'marked';
-import { getAllPostSlugs, getPostBySlug } from '../../../lib/blog';
+import { JSDOM } from 'jsdom';
+import hljs from 'highlight.js';
+import 'highlight.js/lib/languages/python';
+import 'highlight.js/lib/languages/latex';
+import 'highlight.js/styles/vs2015.css';
+import { getPostBySlug } from '../../../lib/blog';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  const slugs = getAllPostSlugs();
-  return slugs.map((slug) => ({
-    slug,
-  }));
-}
-
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const post = getPostBySlug(slug);
+export async function highlightSyntax({ htmlContent }: { htmlContent: string | Promise<string> }) {
+  const resolvedContent = await Promise.resolve(htmlContent);
   
-  if (!post) {
-    return {
-      title: 'Post Not Found',
-    };
+  let dom, document;
+  
+  if (typeof window === 'undefined') {
+    // Server-side: use jsdom
+    dom = new JSDOM(resolvedContent);
+    document = dom.window.document;
+  } else {
+    // Client-side: use browser document
+    document = window.document;
   }
-
-  return {
-    title: `${post.title} - Curie Research Platform`,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      images: post.featuredImage ? [{ url: post.featuredImage }] : [],
-    },
-  };
+  
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = resolvedContent;
+  
+  const codeBlocks = tempDiv.querySelectorAll('pre code');
+  codeBlocks.forEach((block) => {
+    hljs.highlightElement(block as HTMLElement);
+  });
+  
+  return tempDiv.innerHTML;
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -54,7 +56,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
 
   // Parse markdown content to HTML
-  const htmlContent = marked(post.content);
+  const htmlContent  = marked(post.content);
+
+  const highlightedContent = await highlightSyntax({htmlContent});
 
   return (
     <article className="min-h-screen bg-stone-600">
@@ -98,7 +102,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Content */}
       <div className="prose prose-lg max-w-4xl mx-auto markdown-content">
-        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        <div dangerouslySetInnerHTML={{ __html: highlightedContent }} />
       </div>
 
     </article>

@@ -117,7 +117,7 @@ That said, much work remains. While EXP-Bench currently focuses on machine learn
     <a href="https://github.com/Just-Curieous/Curie/tree/main/benchmark/exp_bench" style="padding: 10px 20px; background-color: #f8f9fa; color: #2c3e50; text-decoration: none; border-radius: 5px;">🗃️ Open-sourced dataset</a>
   </div>
 
-```bib
+```latex
 @article{kon2025expbenchaiconductai,
       title={EXP-Bench: Can AI Conduct AI Research Experiments?}, 
       author={Patrick Tser Jern Kon and Jiachen Liu and Xinyi Zhu and Qiuyi Ding and Jingjia Peng and Jiarong Xing and Yibo Huang and Yiming Qiu and Jayanth Srinivasa and Myungjin Lee and Mosharaf Chowdhury and Matei Zaharia and Ang Chen},

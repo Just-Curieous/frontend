@@ -38,26 +38,9 @@ body {
   @apply py-2 mb-4 leading-relaxed;
 }
 
-pre {
-    background-color: #2f3031;
-    border-radius: 6px;
-    padding: 16px;
-    overflow-x: auto;
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    font-size: 14px;
-    line-height: 1.45;
-}
-
 code {
-    background-color: #303336;
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    padding: 2px;
+    border-radius: 12px;
+    font-family: 'Consolas', 'Menlo', Courier, monospace;
     font-size: 85%;
-}
-
-/* Ensure code blocks don't inherit paragraph styling */
-pre code {
-    background-color: transparent;
-    padding: 0;
 }

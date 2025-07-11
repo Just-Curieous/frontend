@@ -12,6 +12,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
+    "jsdom": "^26.1.0",
     "lucide-react": "^0.518.0",
     "marked": "^16.0.0",
     "next": "15.3.4",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/jsdom": "^21.1.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

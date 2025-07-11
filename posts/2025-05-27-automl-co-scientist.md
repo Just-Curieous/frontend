@@ -32,7 +32,7 @@ Curie goes beyond traditional parameter or architecture search based AutoML, and
 
 From data preprocessing, to model and hyperparameter selection, to training and deploying recipes, which all require deep expertise. It's a **vast search space** to find the best performing solution, often involving **iterative experiments** and **specialized intuition** to fine-tune all the different components in the pipeline. Curie aims to automate this. The goal is to democratize access to powerful ML capabilities for researchers.
 
-<div class="figure-container" style="text-align: center; margin: 20px 0;">
+<div class="figure-container" style="text-align: center; margin: 20px 0; ">
     <img src="/exp-bench-mle-curie.drawio.png" 
          alt="Curie AutoML Overview" 
          style="width: 80%; height: auto; max-width: 100%; display: block; margin: 0 auto;">
@@ -42,7 +42,7 @@ From data preprocessing, to model and hyperparameter selection, to training and 
 </div>
 
 All you need to do is input your research question and the dataset path to Curie (more details [here](https://github.com/Just-Curieous/Curie)):
-```python
+<pre><code class="language-python">
 import curie
 result = curie.experiment(
     api_keys=key_dict,
@@ -50,7 +50,7 @@ result = curie.experiment(
     workspace_name="[Optional] /path/to/your/code",
     dataset_dir="/path/to/your/dataset"
 )
-```
+</code></pre>
 
 From there, it will work to generate the optimal ML solution for your specific problem given the budget.
 
@@ -112,7 +112,7 @@ Here are some visualizations showcasing Curie's performance on various tasks: --
 
 
 
-```bib
+<pre><code class="language-latex">
 @misc{kon2025curierigorousautomatedscientific,
       title={Curie: Toward Rigorous and Automated Scientific Experimentation with AI Agents}, 
       author={Patrick Tser Jern Kon and Jiachen Liu and Qiuyi Ding and Yiming Qiu and Zhenning Yang and Yibo Huang and Jayanth Srinivasa and Myungjin Lee and Mosharaf Chowdhury and Ang Chen},
@@ -121,4 +121,4 @@ Here are some visualizations showcasing Curie's performance on various tasks: --
       archivePrefix={arXiv},
       primaryClass={cs.AI},
 }
-``` 
+</code></pre>
