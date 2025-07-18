@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import { getAllPosts } from '@/lib/blog';
 import BlogPageClient from './blog/BlogPageClient';
+import LogoGrid from '@/components/LogoGrid';
 
 export default function LandingPage() {
   const posts = getAllPosts();
@@ -16,6 +17,9 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Trusted by Section */}
+      <LogoGrid />
 
       {/* Projects Section */}
       <section id="projects">
@@ -85,7 +89,7 @@ export default function LandingPage() {
                 description: "Experimental processes and outcomes are clearly documented with insightful figures."
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
+              <div key={index} className="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
                 <div className="text-orange-400 mb-4">{feature.icon}</div>
                 <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
                 <p className="text-gray-200 leading-relaxed">{feature.description}</p>

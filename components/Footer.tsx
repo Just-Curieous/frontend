@@ -21,15 +21,17 @@ export default function Footer() {
                       <span className="ml-3 text-xl font-bold text-white">Curie</span>
                     </div>
                     </Link>
+                    <div className="mt-4 flex space-x-4 text-center text-white pb-4">
+                      <p>&copy; 2025 Curie Research Platform.</p> 
+                      <p>All rights reserved.</p>
+                      <p>829 University Ave, Palo Alto, CA 94301</p>
+                    </div>
                     <div className="flex space-x-8 text-white">
                       <Link href="/research" className="hover:text-white transition-colors">Research</Link>
-                      <Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link>
+                      <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
                     </div>
                   </div>
-                  <div className="mt-8 text-center text-white pb-4">
-                    <p>&copy; 2025 Curie Research Platform. All rights reserved.</p>
-                    <p>829 University Ave, Palo Alto, CA 94301</p>
-                  </div>
+                  
                 </div>
         </footer>
     );
