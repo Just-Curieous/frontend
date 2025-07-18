@@ -32,7 +32,7 @@ export default function BlogPageClient({ posts }: BlogPageClientProps) {
         </h1>
       </div>
       {/* Filters */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section className="max-w-7xl mx-auto py-8">
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
           {/* Search */}
           <div className="w-full sm:w-auto">
@@ -75,7 +75,7 @@ export default function BlogPageClient({ posts }: BlogPageClientProps) {
       </section>
 
       {/* Posts Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto ">
         {filteredPosts.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">No posts found matching your criteria.</p>

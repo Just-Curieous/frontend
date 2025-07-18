@@ -16,7 +16,7 @@ export default function BlogCard({ post }: BlogCardProps) {
   };
 
   return (
-    <article className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
+    <article className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1">
       {post.featuredImage && (
         <div className="relative h-48 w-full">
           <Image

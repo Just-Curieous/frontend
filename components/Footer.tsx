@@ -27,7 +27,6 @@ export default function Footer() {
                       <p>829 University Ave, Palo Alto, CA 94301</p>
                     </div>
                     <div className="flex space-x-8 text-white">
-                      <Link href="/research" className="hover:text-white transition-colors">Research</Link>
                       <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
                     </div>
                   </div>
