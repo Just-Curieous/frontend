@@ -50,7 +50,7 @@ A particularly exciting frontier is **the automation of AI research experimentat
   </div>
 
 <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 15px;">
-    <img src="./images/exp-bench-overview.png" alt="EXP-Bench Overview" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="../blog/exp-bench-overview.png" alt="EXP-Bench Overview" style="width: 100%; height: auto; display: block; margin: 0 auto;">
     <p style="font-size: 0.8em; margin-top: 10px; color: white;">
         Figure 1. EXP-Bench evaluates AI agents on research experiment tasks extracted semi-autonomously from peer-reviewed AI papers.
     </p>
@@ -72,7 +72,7 @@ Using this approach, we distilled *461 experiments from NeurIPS and ICLR papers*
  
 
 <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 15px;">
-    <img src="./images/exp-construction.png" alt="EXP-Bench Construction" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="../blog/exp-construction.png" alt="EXP-Bench Construction" style="width: 100%; height: auto; display: block; margin: 0 auto;">
     <p style="font-size: 0.8em; margin-top: 10px; color: white;">
         Figure 2. Our semi-automated pipeline for constructing EXP-Bench from published papers.
     </p>
@@ -82,7 +82,7 @@ Using this approach, we distilled *461 experiments from NeurIPS and ICLR papers*
 
 </div>
 <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 0 15px;"> 
-    <img src="./images/exp-bench-example.png" alt="EXP-Bench Example" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="../blog/exp-bench-example.png" alt="EXP-Bench Example" style="width: 100%; height: auto; display: block; margin: 0 auto;">
     <p style="font-size: 0.8em; margin-top: 10px; color: white;">
         Figure 3. One AI research task example from ICLR 2024 MogaNet [1].
     </p>

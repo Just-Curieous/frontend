@@ -41,7 +41,7 @@ As researchers, this is our daily routine: we dive deep into literature, absorb 
 These sparks of intuition are the lifeblood of research. Yet, transforming them into verified knowledge requires something far less glamorous: rigorous, often tedious **scientific experimentation**. Designing the experiment, executing it, collecting results, analyzing data, and refining your hypothesis—it’s a cycle of trial and error that can consume days, months, even years.
 
 <div style="text-align: center;">
-    <img src="./overview.png" alt="Curie Overview" style="border-radius: 12px; max-width: 100%; height: auto;">
+    <img src="../blog/overview.png" alt="Curie Overview" style="border-radius: 12px; max-width: 100%; height: auto;">
     <p style="font-size: 0.8em; margin-top: 10px;">
         Figure 1. Curie overview.
     </p>
@@ -58,7 +58,7 @@ Experimentation is the backbone of scientific progress, demanding reliability, m
 We're thrilled to introduce Curie, an AI agent framework designed to bring rigor to automated experimentation. Curie isn't just designed to automate experiments as shown in Figure 1; it's built to empower researchers to reproduce existing work, extend findings, and even challenge established conclusions, fostering a more dynamic and rigorous scientific process, as shown in Figure 2.
 
 <div class="figure-container" style="text-align: center; max-width: 100%; margin: 0 auto;">
-    <img src="./case-study.png" alt="Case Study" style="border-radius: 12px; width: 100%; height: auto; display: block;">
+    <img src="../blog/case-study.png" alt="Case Study" style="border-radius: 12px; width: 100%; height: auto; display: block;">
     <p style="font-size: 0.8em; margin-top: 10px;">
         Figure 2. Case study. Curie tries to reprodcuce, extend and challenge the Large Language Monkeys paper[1].
     </p>
@@ -71,7 +71,7 @@ At the heart of Curie lies our innovative Experimental Rigor Engine, designed to
 - **Experiment Knowledge Module**: Enhances interpretability by maintaining well-structured documentation, enabling seamless collaboration and efficient experiment management. This module addresses the limitations of LLMs in knowledge management by providing a structured and verifiable record of the experimental process.
 
 <div style="text-align: center; max-width: 800px; margin: 0 auto; padding: 15px;">
-    <img src="./workflow.png" alt="Curie Workflow" style="border-radius: 12px; width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="../blog/workflow.png" alt="Curie Workflow" style="border-radius: 12px; width: 100%; height: auto; display: block; margin: 0 auto;">
     <p style="font-size: 0.8em; margin-top: 10px;">
         Figure 3. High-level Curie workflow with an example task in LLM reasoning.
     </p>
