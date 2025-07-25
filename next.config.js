@@ -1,5 +1,6 @@
 
 const nextConfig = {
+  basePath: "/frontend",
   output: "export",
 };
 
