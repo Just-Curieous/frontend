@@ -8,12 +8,13 @@ import 'highlight.js/lib/languages/python';
 import 'highlight.js/lib/languages/latex';
 import 'highlight.js/styles/vs2015.css';
 import { getPostBySlug } from '../../../lib/blog';
+import { getAllPosts } from '../../../lib/blog';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function highlightSyntax({ htmlContent }: { htmlContent: string | Promise<string> }) {
+async function highlightSyntax({ htmlContent }: { htmlContent: string | Promise<string> }) {
   const resolvedContent = await Promise.resolve(htmlContent);
   
   let dom, document;
@@ -36,6 +37,15 @@ export async function highlightSyntax({ htmlContent }: { htmlContent: string | P
   });
   
   return tempDiv.innerHTML;
+}
+
+export async function generateStaticParams() {
+  // Replace this with your actual logic to get all blog post slugs
+  const posts = await getAllPosts(); // Your function to get posts
+  
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {

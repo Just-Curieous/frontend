@@ -46,9 +46,9 @@ All you need to do is input your research question and the dataset path to Curie
 import curie
 result = curie.experiment(
     api_keys=key_dict,
-    question="E.g. How to improve my prediction accuracy on my dataset. Checkout <paper.pdf> for the more information.",
-    workspace_name="[Optional] /path/to/your/code",
-    dataset_dir="/path/to/your/dataset"
+    question=&quot;E.g. How to improve my prediction accuracy on my dataset. Checkout &lt;paper.pdf&gt; for the more information.&quot;,
+    workspace_name=&quot;[Optional] /path/to/your/code&quot;,
+    dataset_dir=&quot;/path/to/your/dataset&quot;
 )
 </code></pre>
 
