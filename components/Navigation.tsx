@@ -27,7 +27,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <div className="w-7 h-7 rounded-lg flex items-center justify-center">
               <Image 
-                src="/curie.png"
+                src="./curie.png"
                 width={23}
                 height={23}
                 className="rounded-lg flex items-center justify-center"

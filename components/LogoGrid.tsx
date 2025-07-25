@@ -26,43 +26,43 @@ const LogoGrid: React.FC<LogoGridProps> = ({
   const defaultLogos: Logo[] = [
     {
       id: '1',
-      src: '/logos/Umich-white-logo.png',
+      src: './logos/Umich-white-logo.png',
       alt: 'University of Michigan',
       name: 'University of Michigan'
     },
     {
       id: '2',
-      src: '/logos/logo-ucberkeley-white.png',
+      src: './logos/logo-ucberkeley-white.png',
       alt: 'UC Berkeley',
       name: 'UC Berkeley'
     },
     {
       id: '3',
-      src: '/logos/Rice_Logo_White.png',
+      src: './logos/Rice_Logo_White.png',
       alt: 'Rice University',
       name: 'Rice University'
     },
     {
       id: '4',
-      src: '/logos/cisco-white-logo.png',
+      src: './logos/cisco-white-logo.png',
       alt: 'Cisco Systems',
       name: 'Cisco Systems'
     },
     {
       id: '5',
-      src: '/logos/unc-logo.png',
+      src: './logos/unc-logo.png',
       alt: 'UNC',
       name: 'UNC'
     },
     {
       id: '6',
-      src: '/logos/meta-white-logo.png',
+      src: './logos/meta-white-logo.png',
       alt: 'Meta',
       name: 'Meta'
     },
     {
       id: '7',
-      src: '/logos/UPenn.png',
+      src: './logos/UPenn.png',
       alt: 'UPenn',
       name: 'UPenn'
     }
