@@ -11,7 +11,7 @@ export default function Footer() {
                     <div className="flex items-center mb-6 md:mb-0">
                       <div className="w-7 h-7 rounded-lg flex items-center justify-center">
                         <Image 
-                          src="/curie.png"
+                          src="./curie.png"
                           width={25}
                           height={25}
                           className="rounded-lg flex items-center justify-center"

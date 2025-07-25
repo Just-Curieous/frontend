@@ -33,7 +33,7 @@ Curie goes beyond traditional parameter or architecture search based AutoML, and
 From data preprocessing, to model and hyperparameter selection, to training and deploying recipes, which all require deep expertise. It's a **vast search space** to find the best performing solution, often involving **iterative experiments** and **specialized intuition** to fine-tune all the different components in the pipeline. Curie aims to automate this. The goal is to democratize access to powerful ML capabilities for researchers.
 
 <div class="figure-container" style="text-align: center; margin: 20px 0; ">
-    <img src="/exp-bench-mle-curie.drawio.png" 
+    <img src="./exp-bench-mle-curie.drawio.png" 
          alt="Curie AutoML Overview" 
          style="width: 80%; height: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 12px;">
     <div style="margin-top: 10px; font-style: italic; font-size: 14px;">
@@ -68,7 +68,7 @@ More AutoML use cases can be found [here](https://github.com/Just-Curieous/Curie
 #### Case Study: Skin Cancer Detection Challenge
 Here's a preview of an auto-generated report from Curie. You can scroll through it to see the detailed analysis and insights:
 
-<iframe src="/report.pdf" width="100%" height="600px" style="border-radius: 12px;"></iframe>
+<iframe src="./report.pdf" width="100%" height="600px" style="border-radius: 12px;"></iframe>
 
 Curie demonstrated some impressive capabilities in the skin cancer detection challenge:
 * It managed to train a model achieving **a remarkable 0.99 AUC (top 1% performance)** using 2 hours. Moreover, the agent intelligently explored a variety of models with early stopping strategies on dataset subsets to quickly gauge potential to **efficiently navigate the vast search space** of possible models.
